@@ -1,0 +1,113 @@
+{
+  "name": "@focela/theme",
+  "version": "1.0.0",
+  "description": "A modern React application layout with customization and essential providers.",
+  "license": "Proprietary",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "main": "./index.js",
+  "module": "./theme.esm.js",
+  "types": "./index.d.ts",
+  "author": "Focela Labs <opensource@focela.com> (https://www.focela.com)",
+  "homepage": "https://theme.focela.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/focela/theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/focela/theme/issues"
+  },
+  "scripts": {
+    "prebuild": "npm run docs",
+    "build": "tsc && vite build",
+    "watch": "tsdx watch --transpileOnly --entry ./src/index.ts",
+    "docs": "rimraf typedoc.json && typedoc --tsconfig",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
+    "prettier": "prettier --write .",
+    "test": "echo todo-test",
+    "copy": "cp package.json README.md LICENSE dist",
+    "prerelease": "npm run build && npm run copy",
+    "release": "npm run prerelease && npm publish",
+    "postversion": "npm run copy:meta",
+    "knip": "knip"
+  },
+  "peerDependencies": {
+    "react": "17.0.0 || 18.0.0 || 19.0.0",
+    "react-dom": "17.0.0 || 18.0.0 || 19.0.0"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "goober": "2.1.16"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "7.26.3",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@typescript-eslint/eslint-plugin": "8.21.0",
+    "@typescript-eslint/parser": "8.22.0",
+    "babel-plugin-optimize-clsx": "2.6.2",
+    "eslint": "9.19.0",
+    "eslint-config-prettier": "10.0.1",
+    "eslint-plugin-prettier": "5.2.3",
+    "eslint-plugin-react": "7.37.4",
+    "husky": "9.1.7",
+    "lint-staged": "15.5.0",
+    "np": "10.2.0",
+    "prettier": "3.4.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "rimraf": "6.0.1",
+    "rollup-plugin-bundle-size": "1.0.3",
+    "rollup-plugin-copy": "3.5.0",
+    "tsdx": "0.14.1",
+    "tslib": "2.8.1",
+    "typedoc": "0.28.1",
+    "typescript": "5.7.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "np": {
+    "branch": "main",
+    "yarn": false,
+    "contents": "./dist",
+    "message": "v%s",
+    "releaseDraft": false
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --cache --write"
+    ]
+  },
+  "keywords": [
+    "react",
+    "react-app",
+    "layout",
+    "theme",
+    "rtl",
+    "i18n",
+    "localization",
+    "router",
+    "notistack",
+    "snackbar",
+    "mui",
+    "context-provider",
+    "customization"
+  ],
+  "packageManager": "yarn@4.7.0"
+}
