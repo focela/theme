@@ -1,4 +1,63 @@
-# JetBrains IDEs (IntelliJ, WebStorm, etc.)
+#------------------------------------------------------------------------
+# GIT IGNORE CONFIGURATION
+#
+# Purpose: Defines files and directories that should be excluded from
+# version control. Organized by category for easy maintenance and
+# understanding of what gets ignored and why.
+#
+# Note: Patterns are checked in order. More specific patterns should
+# come after general ones. Use comments to explain non-obvious patterns.
+#------------------------------------------------------------------------
+
+#------------------------------------------------------------------------
+# NODE AND BUILD OUTPUT (ReactJS/Vite)
+#------------------------------------------------------------------------
+# Node modules and build output directories
+dist/
+node_modules/
+
+#------------------------------------------------------------------------
+# VITE CACHE
+#------------------------------------------------------------------------
+# Vite-specific cache directory
+.vite/
+
+#------------------------------------------------------------------------
+# OPERATING SYSTEM FILES
+#------------------------------------------------------------------------
+# macOS system and metadata files
+._*
+.apdisk
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100
+.DS_Store
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+Icon
+Network Trash Folder
+Temporary Items
+
+# Windows system files
+Thumbs.db
+
+# Swap files (for macOS/Linux/other editors)
+*.swo
+*.swp
+
+#------------------------------------------------------------------------
+# DEVELOPMENT ENVIRONMENT FILES
+#------------------------------------------------------------------------
+# VSCode settings
+.vscode/
+
+# JetBrains IDEs (IntelliJ IDEA, WebStorm, PyCharm, etc.)
 .idea/
 .idea/$CACHE_FILE$
 .idea/**/aws.xml
@@ -27,90 +86,49 @@
 .idea_modules/
 modules.xml
 
-# IntelliJ Project Files
+# IntelliJ project files
 *.iml
 *.ipr
 
-# External Plugins
+#------------------------------------------------------------------------
+# THIRD-PARTY PLUGIN FILES
+#------------------------------------------------------------------------
+# External development tools and plugins
 atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics-build.properties
 crashlytics.properties
 fabric.properties
 
-# macOS System Files
-._
-.apdisk
-.AppleDB
-.AppleDesktop
-.AppleDouble
-.com.apple.timemachine.donotpresent
-.DocumentRevisions-V100
-.DS_Store
-.fseventsd
-.LSOverride
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-Icon
-Network Trash Folder
-Temporary Items
-
-# SSL and Security
-.well-known
-
-# Environment and Configuration
+#------------------------------------------------------------------------
+# SECURITY AND CONFIGURATION
+#------------------------------------------------------------------------
+# Sensitive configuration and security files
 .env
+.env.*.local
+.env.local
+.well-known/
 
-# Logs and Temporary Files
+#------------------------------------------------------------------------
+# LOGS AND TEMPORARY FILES
+#------------------------------------------------------------------------
+# Application and system logs
 *.log
 *.tmp
 logs/
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Docker and Kubernetes
-.dockerignore
-.kube/
-
-# React.js and Node.js Projects
-# Logs and Debugging
-*.pid
-*.pid.lock
-*.seed
-pids/
-
-# Test and Coverage
-.nyc_output/
+#------------------------------------------------------------------------
+# COVERAGE REPORTS
+#------------------------------------------------------------------------
+# Local coverage reports (optional)
 coverage/
-lib-cov/
 
-# Dependencies
-.pnp.cjs
-.pnp.loader.mjs
-.yarn/install-state.gz
-.yarn/unplugged/
-bower_components/
-jspm_packages/
-node_modules/
-package-lock.json
-
-# Build Output
-build/
-dist/
-
-# TypeScript and Linting
-.eslintcache/
-.node_repl_history/
-.npm/
-.typings/
-
-# Packaging
-*.tgz
-.yarn-integrity
-stats.json
-
-# Miscellaneous
-npm-debug.log
+#------------------------------------------------------------------------
+# CONTAINER AND ORCHESTRATION
+#------------------------------------------------------------------------
+# Docker and Kubernetes configuration
+.kube/
